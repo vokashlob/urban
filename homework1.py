@@ -1,3 +1,4 @@
+
 example = 'Кимберлит'
 
 print(example[0])
