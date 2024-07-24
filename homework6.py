@@ -22,7 +22,7 @@ my_set = set((keys + values) * 2)
 
 # print(my_list, my_set) # показательная работа команды set(), удаляющая повторяющиеся значения
 print('Множества:', '\n')
-print('Set', my_set)
+print('Set:', my_set)
 my_set.update({1973, 2024})
 my_set.discard(100)
-print('Modified set', my_set)
+print('Modified set:', my_set)
