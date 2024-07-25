@@ -11,7 +11,7 @@ students = sorted(students)
 average_grade = [sum(i) / len(i) for i in grades]
 
 # генерируем и выводим на консоль словарь
-#grades_dict = {k: v for k, v in zip(students, average_grade)}
+# grades_dict = {k: v for k, v in zip(students, average_grade)}
 grades_dict = dict(zip(students, average_grade))
 
 print(grades_dict)
