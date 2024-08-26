@@ -17,7 +17,7 @@ class House:
 
 h1 = House('Эдьбрус', 25)
 h2 = House('Машук', 2)
-h3 = House('Казбек', 0)
+h3 = House('Казбек', 1)
 h1.go_to(5)
 h2.go_to(10)
-h3.go_to(10)
+h3.go_to(0)
