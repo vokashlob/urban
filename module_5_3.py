@@ -81,11 +81,11 @@ class House:
     def __add__(self, other):
         if isinstance(other, House):
             self.number_of_floors = len(self) + len(other)
-            return self.number_of_floors
+            return self
 
         elif isinstance(other, int):
             self.number_of_floors = len(self) + other
-            return self.number_of_floors
+            return self
 
         else:
             return 'Неверный тип данных'
@@ -109,11 +109,11 @@ print(h1 == h2)  # __eq__
 
 h1 = h1 + 10  # __add__
 print(h1)
+print(type(h1))
 print(h1 == h2)
 
 h1 += 10  # __iadd__
 print(h1)
-print(type(h1))
 
 h2 = 10 + h2  # __radd__
 print(h2)
@@ -125,6 +125,6 @@ print(h1 < h2)  # __lt__
 print(h1 <= h2)  # __le__
 print(h1 != h2)  # __ne__
 
-h1 = House('ЖК Эльбрус', 10)
+# h1 = House('ЖК Эльбрус', 10)
 h1 = h1 + 2.5
 print(h1)
