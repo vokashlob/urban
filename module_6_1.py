@@ -1,4 +1,5 @@
 
+# определение классов
 class Animal:
     def __init__(self, name):
         self.alive = True
