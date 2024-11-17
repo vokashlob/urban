@@ -68,7 +68,7 @@ db.get_cords()
 
 db.lay_eggs()
 
-# print(Duckbill.mro())
-# print(PoisonousAnimal.mro())
+# print(Duckbill.mro(), db.__dir__())
+# print(PoisonousAnimal.mro()1)
 # print(AquaticAnimal.mro())
 # print(Bird.mro())
