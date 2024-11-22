@@ -21,8 +21,9 @@ class Shop:
 
     def add(self, *products):
         file = open(self.__file_name, 'a')
+        product_list = self.get_products()
         for product in products:
-            if product.__str__() in self.get_products():
+            if str(product) in product_list:
                 print(f'Продукт {product} уже есть в магазине')
             else:
                 file.write(f'{product}\n')
