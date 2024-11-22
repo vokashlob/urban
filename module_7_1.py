@@ -27,6 +27,7 @@ class Shop:
                 print(f'Продукт {product} уже есть в магазине')
             else:
                 file.write(f'{product}\n')
+                product_list += (str(product) + '\n')'
         file.close()
 
 #  проверки
