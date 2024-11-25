@@ -1,6 +1,6 @@
 
 def add_everything_up(a, b):
-    result = ''
+    result = None
     try:
         result = a + b
     except TypeError:
