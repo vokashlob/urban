@@ -16,8 +16,8 @@ class Guest(threading.Thread):
         self.name = name
 
     def run(self):
-        waiting_time = random.randint(3, 10)
-        sleep(waiting_time)
+        self.waiting_time = random.randint(3, 10)
+        sleep(self.waiting_time)
 
 
 class Cafe:
@@ -31,7 +31,7 @@ class Cafe:
                 if table.guest is None:
                     table.guest = guest
                     guest.start()
-                    print(f'{guest.name} сел(-а) за стол номер {table.number}')
+                    print(f'{guest.name} сел(-а) за стол номер {table.number} и будет есть {guest.waiting_time} секунд')
                     break
             if not guest.is_alive():
                 self.queue.put(guest)
@@ -41,7 +41,7 @@ class Cafe:
         empty_tables = 0
         while not self.queue.empty() or empty_tables != len(self.tables):
             for table in self.tables:
-                if table.guest is not None and not table.guest.is_alive():
+                if table.guest and not table.guest.is_alive():
                     print(f'{table.guest.name} покушал(-а) и ушел(ушла)')
                     print(f'Стол номер {table.number} свободен')
                     table.guest = None
@@ -50,8 +50,8 @@ class Cafe:
                     table.guest = self.queue.get()
                     print(f'{table.guest.name} вышел из очереди и сел за стол номер {table.number}')
                     table.guest.start()
+                    print(f'{table.guest.name} будет есть {table.guest.waiting_time} секунд')
                     empty_tables -= 1
-
 
 
 # Создание столов
