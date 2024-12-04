@@ -39,7 +39,7 @@ class Cafe:
 
     def discuss_guests(self):
         empty_tables = 0
-        while not self.queue.empty() or empty_tables != len(self.tables):
+        while empty_tables != len(self.tables):
             for table in self.tables:
                 if table.guest and not table.guest.is_alive():
                     print(f'{table.guest.name} покушал(-а) и ушел(ушла)')
