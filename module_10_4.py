@@ -14,9 +14,9 @@ class Guest(threading.Thread):
     def __init__(self, name):
         threading.Thread.__init__(self)
         self.name = name
+        self.waiting_time = random.randint(3, 10)
 
     def run(self):
-        self.waiting_time = random.randint(3, 10)
         sleep(self.waiting_time)
 
 
