@@ -15,9 +15,9 @@ class TournamentTest(unittest.TestCase):
         self.r3 = runner_and_tournament.Runner('Ник', 3)
 
     @classmethod
-    def tearDownClass(self):
-        while self.all_results:
-            print(self.all_results.pop(0))
+    def tearDownClass(cls):
+        while cls.all_results:
+            print(cls.all_results.pop(0))
 
     def testRun1(self):
         run1 = runner_and_tournament.Tournament(DISTANCE, self.r1, self.r3)
