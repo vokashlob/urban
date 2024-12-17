@@ -6,15 +6,14 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 import asyncio
 
 
-api = ''
+api = '8181920075:AAFnHAzw4HFuhkFdF8_61Y6BgXXa-vPvx3A'
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
 kb1 = ReplyKeyboardMarkup(resize_keyboard=True)
 button1 = KeyboardButton(text='Рассчитать')
 button2 = KeyboardButton(text='Информация')
-kb1.add(button1)
-kb1.add(button2)
+kb1.row(button1, button2)
 
 
 class UserState(StatesGroup):
