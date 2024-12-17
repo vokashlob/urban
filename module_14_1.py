@@ -17,9 +17,9 @@ for i in range(1, 11):
                    (f'User{i}', f'example{i}@gmail.com', 10 * i, 1000))
 
 
-cursor.execute('UPDATE Users SET balance = ? WHERE ID % 2 = 1', (500,))
+cursor.execute('UPDATE Users SET balance = ? WHERE id % 2 = 1', (500,))
 
-cursor.execute('DELETE FROM Users WHERE ID % 3 = 1')
+cursor.execute('DELETE FROM Users WHERE id % 3 = 1')
 
 cursor.execute('SELECT * FROM Users WHERE age != 60')
 users = cursor.fetchall()
