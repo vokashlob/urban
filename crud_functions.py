@@ -25,6 +25,7 @@ def initiate_db():
     balance INT NOT NULL
     );
     ''')
+    connection.commit()
 
 
 def add_product(id, title, description, price):
