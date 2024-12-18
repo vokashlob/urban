@@ -4,6 +4,7 @@ connection = sqlite3.connect('products.db')
 cursor = connection.cursor()
 
 
+
 def initiate_db():
 
     cursor.execute('''
@@ -37,14 +38,17 @@ def get_all_products():
     connection.commit()
     return products
 
+
 def add_user(username, email, age):
-    cursor.execute(f'INSERT INTO Users VALUES("{username}", "{email}", "{age}", "1000")')
+    counter = cursor.execute('SELECT COUNT(*) FROM Users').fetchone()
+    cursor.execute(f'INSERT INTO Users VALUES("{int(counter[0]) + 1}", "{username}", "{email}", "{age}", "1000")')
     connection.commit()
 
+
 def is_included(username):
-    test = cursor.execute(f'SELECT username FROM Users WHERE username = {username}').fetchone()
+    test = cursor.execute(f'SELECT username FROM Users WHERE username = "{username}"').fetchone()
     connection.commit()
-    return True if test[0] else False
+    return True if test else False
 
 # add_product(1, 'Постельное белье 2 спальное Веселина, Бербари, бязь, наволочки 50х70, 100% хлопок',
 #             'Постельное белье двуспальное с евро простыней от бренда Веселина ассоциируется только с уютом, '
@@ -65,8 +69,10 @@ def is_included(username):
 #             'пиву.', 935)
 
 # print(get_all_products())
-initiate_db()
-add_user('test', 'e@mail.com', 25)
-is_included('test')
+# initiate_db()
+# add_user('test', 'e@mail.com', 25)
+# print(is_included('test'))
+# print(is_included('sdfgsdfg'))
+# cursor.execute('DROP TABLE Users')
 
 connection.commit()
