@@ -7,7 +7,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import asyncio
 from crud_functions import *
 
-api = ' '
+api = ''
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 initiate_db()
@@ -50,7 +50,7 @@ class RegistrationState(StatesGroup):
 
 @dp.message_handler(commands=['start'])
 async def start(message):
-    await message.answer('Привет! Я бот помогающий твоему здоровью', reply_markup=kb1)
+    await message.answer(f'Привет, @{message.from_user.username}! Я бот помогающий твоему здоровью', reply_markup=kb1)
 
 
 @dp.message_handler(text='Регистрация')
