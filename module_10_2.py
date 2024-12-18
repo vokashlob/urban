@@ -1,5 +1,6 @@
 import threading
 from time import sleep
+import random
 
 
 class Knight(threading.Thread):
@@ -12,7 +13,7 @@ class Knight(threading.Thread):
         print(f'{self.name}, на нас напали!\n')
         enemies = 100
         time_counter = 0
-        while enemies:
+        while enemies > 0:
             time_counter += 1
             enemies -= self.power
             print(f'{self.name} сражается {time_counter} дней(дня), осталось {enemies} воинов.\n')
@@ -21,8 +22,8 @@ class Knight(threading.Thread):
         print(f'{self.name} одержал победу спустя {time_counter} дней(дня)!\n')
 
 
-first_knight = Knight('Sir Lancelot', 10)
-second_knight = Knight("Sir Galahad", 20)
+first_knight = Knight('Sir Lancelot', random.randrange(10, 60, 10))
+second_knight = Knight("Sir Galahad", random.randrange(10, 60, 10))
 
 first_knight.start()
 second_knight.start()

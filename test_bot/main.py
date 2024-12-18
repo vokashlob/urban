@@ -7,6 +7,8 @@ from aiogram.dispatcher import FSMContext
 
 import asyncio
 
+from admin import *
+from db import *
 from config import *
 from keyboards import *
 import texts

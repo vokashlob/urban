@@ -24,3 +24,14 @@ buy_kb = InlineKeyboardMarkup(
         [InlineKeyboardButton(text='Купить', url='https://ya.ru')]
     ]
 )
+
+admin_panel = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [InlineKeyboardButton(text='Пользователи', callback_data='users')],
+        [InlineKeyboardButton(text='Статистика', callback_data='stats')],
+        [
+            InlineKeyboardButton(text='Блокировка', callback_data='block'),
+            InlineKeyboardButton(text='Разблокировка', callback_data='unblock')
+        ]
+    ]
+)
